@@ -25,12 +25,19 @@ public class DeleteUpdateStudentData
        Connection connection = getConnection();
        Statement statement = connection.createStatement();
         //execute delete query
+        String sql = "delete from student where rollNo = 4";
+        int rows = statement.executeUpdate(sql);
+        System.out.println("rows = " + rows);
     }
 
-    public void updateStudentData(){
+    public void updateStudentData() throws SQLException, ClassNotFoundException {
         // call getConnection() method
-
+        Connection connection = getConnection();
+        Statement statement = connection.createStatement();
         //execute update query
+        String sql = "update student set Name = 'Manohar' where rollNo = 5 and totalMarks = 375";
+        int rows = statement.executeUpdate(sql);
+        System.out.println("rows = " + rows);
     }
 
     public static void main(String[] args) {
